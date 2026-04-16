@@ -22,6 +22,8 @@ albedo_texture = ExtResource("2_0xm2m")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+
 [node name="Main" type="Node3D" unique_id=1727937391]
 script = ExtResource("1_ig7tw")
 
@@ -58,17 +60,23 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.013427734, 0, -1)
 mesh = SubResource("BoxMesh_ig7tw")
 
 [node name="lisa" type="MeshInstance3D" parent="." unique_id=489254892]
-transform = Transform3D(0.9967719, -0.080285914, 0, 0.035177395, 0.4367371, -0.89890116, 0.0721691, 0.8959994, 0.4381515, 1.3282115, -0.19412494, -3.7856107)
+transform = Transform3D(0.9967719, -0.080285914, 0, 0.035177395, 0.4367371, -0.89890116, 0.0721691, 0.8959994, 0.4381515, 1.3282115, 0.80587506, -3.7856107)
 mesh = SubResource("PlaneMesh_h2yge")
 surface_material_override/0 = SubResource("StandardMaterial3D_1bvp3")
 
 [node name="ground" type="MeshInstance3D" parent="." unique_id=1040806346]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.2, 0)
 mesh = SubResource("PlaneMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=1819508413]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=96147906]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("BoxShape3D_5vw27")
 
 [node name="convert" parent="." unique_id=1824715613 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 script = ExtResource("1_ig7tw")
 
 [node name="PickableObject" parent="." unique_id=1172713315 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59851754, 0, -1.6707859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59851754, 1, -1.6707859)
