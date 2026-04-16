@@ -1,27 +1,21 @@
 [gd_scene format=3 uid="uid://xgp5028p37q6"]
 
 [ext_resource type="Script" uid="uid://bgh4hksglksr4" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://ng8xe05x0i8u" path="res://the mona lisa.jpg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bgwhylengcqbu" path="res://xr_origin_3d.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="3_272bh"]
-[ext_resource type="PackedScene" uid="uid://dgmecncsnv0e" path="res://pixellabs-stairs-3764.glb" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://bsxlry0jsfhsa" path="res://Lighthouse.glb" id="7_4c57u"]
-[ext_resource type="PackedScene" uid="uid://cmh3sbjt2mws7" path="res://ball.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://c1rh5xomnr2ly" path="res://chair.glb" id="7_efxa6"]
+[ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b7iu070gec501" path="res://cubes.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://d4ka0dyksf3ew" path="res://table.glb" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://to5ih32lqibe" path="res://chair_broken.glb" id="11_ycdy4"]
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
 ambient_light_color = Color(0.28017977, 0.6737199, 0.5240649, 1)
 ambient_light_energy = 0.3
-
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_texture = ExtResource("2_0xm2m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
 albedo_color = Color(0.20784314, 0.5764706, 0.36078432, 1)
@@ -68,23 +62,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -0.78
 [node name="CUBES4" parent="XROrigin3D" unique_id=1393085229 instance=ExtResource("9_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51714456, 0.91607815, -0.7843787)
 
+[node name="chair" parent="XROrigin3D" unique_id=2027573943 instance=ExtResource("7_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -2)
+
+[node name="CUBES" parent="XROrigin3D/chair" unique_id=1485984639 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=812943472]
 environment = SubResource("Environment_0xm2m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=306115387]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
-[node name="the cube" type="MeshInstance3D" parent="." unique_id=1315404690]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.013427734, 0, -1)
-mesh = SubResource("BoxMesh_ig7tw")
-
-[node name="lisa" type="MeshInstance3D" parent="." unique_id=489254892]
-transform = Transform3D(0.9967719, -0.080285914, 0, 0.035177395, 0.4367371, -0.89890116, 0.0721691, 0.8959994, 0.4381515, 1.3282115, 0.80587506, -3.7856107)
-mesh = SubResource("PlaneMesh_h2yge")
-surface_material_override/0 = SubResource("StandardMaterial3D_1bvp3")
-
 [node name="ground" type="MeshInstance3D" parent="." unique_id=1040806346]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.2, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -0.2772079, -0.37960738, 0.38090003)
 mesh = SubResource("PlaneMesh_0xm2m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=1819508413]
@@ -93,12 +84,17 @@ mesh = SubResource("PlaneMesh_0xm2m")
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 shape = SubResource("BoxShape3D_5vw27")
 
-[node name="convert" parent="." unique_id=1824715613 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-script = ExtResource("1_ig7tw")
+[node name="crowbar" parent="." unique_id=410887547 instance=ExtResource("8_5vw27")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.0005455017, 0.9833007, -0.35710382)
 
-[node name="PickableObject" parent="." unique_id=1172713315 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5985175, 0.70959866, -1.6707859)
+[node name="table" parent="." unique_id=1749143038 instance=ExtResource("10_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3952174, 0, -2.0529056)
+
+[node name="chair_broken" parent="." unique_id=620281233 instance=ExtResource("11_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.424017, 0, 0.71869993)
+
+[node name="table2" parent="." unique_id=1788306654 instance=ExtResource("10_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2866719, 0, 0.03259611)
 
 [node name="Lighthouse" parent="." unique_id=1769341666 instance=ExtResource("7_4c57u")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, -1, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.186561, 0.07919788, -6.858473)
