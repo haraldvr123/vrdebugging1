@@ -5,11 +5,19 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_41u45"]
 radius = 0.001
 
+[sub_resource type="MeshTexture" id="MeshTexture_x8fbi"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8fbi"]
+albedo_color = Color(0.7132286, 0.2487255, 0.4754898, 1)
+albedo_texture = SubResource("MeshTexture_x8fbi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u45"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktgx5"]
+albedo_color = Color(0.36862746, 0.58431375, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_x8fbi"]
+material = SubResource("StandardMaterial3D_ktgx5")
 
 [node name="PickableObject" unique_id=1172713315 instance=ExtResource("1_x8fbi")]
 

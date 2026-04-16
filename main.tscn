@@ -79,4 +79,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 script = ExtResource("1_ig7tw")
 
 [node name="PickableObject" parent="." unique_id=1172713315 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59851754, 1, -1.6707859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5985175, 0.70959866, -2.670786)
