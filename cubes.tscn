@@ -18,6 +18,7 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [node name="CUBES" unique_id=1651432502 instance=ExtResource("1_r4ci3")]
 physics_material_override = SubResource("PhysicsMaterial_r4ci3")
+gravity_scale = 0.0
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_knch6")
