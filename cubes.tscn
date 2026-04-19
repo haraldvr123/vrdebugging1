@@ -5,9 +5,8 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r4ci3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_knch6"]
-custom_solver_bias = 1.0
 margin = 0.01
-size = Vector3(0.05, 0.05, 0.05)
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4ci3"]
 albedo_color = Color(1, 0, 0, 1)
