@@ -45,18 +45,6 @@ tracker = &"right_hand"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="XROrigin3D" unique_id=1359242720]
 
-[node name="CUBES" parent="XROrigin3D" unique_id=1651432502 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -1)
-
-[node name="CUBES2" parent="XROrigin3D" unique_id=1375434563 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -7.1133595)
-
-[node name="CUBES3" parent="XROrigin3D" unique_id=1446608888 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2424049, 0.91607815, -2.7843788)
-
-[node name="CUBES4" parent="XROrigin3D" unique_id=1393085229 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5171446, -0.08392185, -0.7843787)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=812943472]
 environment = SubResource("Environment_0xm2m")
 
@@ -72,3 +60,15 @@ mesh = SubResource("PlaneMesh_0xm2m")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=96147906]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 shape = SubResource("BoxShape3D_5vw27")
+
+[node name="CUBES" parent="." unique_id=1651432502 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -1)
+
+[node name="CUBES2" parent="." unique_id=1375434563 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -7.1133595)
+
+[node name="CUBES3" parent="." unique_id=1446608888 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2424049, 0.91607815, -2.7843788)
+
+[node name="CUBES4" parent="." unique_id=1393085229 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5171446, -0.08392185, -0.7843787)
